@@ -1,11 +1,11 @@
 import { Component } from 'react';
 import { fetchImages } from 'shares/Api';
-import Modal from 'components/Modal/Modal';
-import Searchbar from '../Searchbar/Searchbar';
-import Loader from '../Loader/Loader';
-import Button from 'components/Button/Button';
+import Modal from 'components/Modal';
+import Searchbar from '../Searchbar';
+import Loader from '../Loader';
+import ImageGalleryItem from '../ImageGalleryItem';
+import Button from 'components/Button';
 import { ImageGalleryWrapper } from './ImageGallery.styled';
-import ImageGalleryItem from '../ImageGalleryItem/ImageGalleryItem';
 
 export default class ImageGallery extends Component {
     state = {

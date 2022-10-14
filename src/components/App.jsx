@@ -1,4 +1,4 @@
-import ImageGallery from './ImageGallery/ImageGallery';
+import ImageGallery from './ImageGallery';
 
 export const App = () => {
     return (
