@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import { fetchImages } from '../shares/fetchApiImages';
+import { fetchImages } from 'shares/fetchApiImages';
 import Modal from 'components/Modal';
 import Searchbar from '../Searchbar';
 import Loader from '../Loader';
