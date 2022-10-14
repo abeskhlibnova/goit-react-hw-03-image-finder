@@ -1,52 +1,38 @@
-import { Component } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import {
-    SearchbarWrapper,
+    Header,
     SearchForm,
     SearchFormButton,
     SearchFormInput,
 } from './Searchbar.styled';
-import IconButton from 'components/Button/Button';
-import { ReactComponent as SearchIcon } from 'icons/search.svg';
+import { IconContext } from 'react-icons';
+import { ImSearch } from 'react-icons/im';
 
-export default class Searchbar extends Component {
-    state = {
-        search: '',
-    };
-    render() {
-        return (
-            <SearchbarWrapper>
-                <SearchForm>
-                    <SearchFormButton>
-                        <IconButton />
-                        <SearchIcon width="40" height="40" fill="#3f51b5" />
-                    </SearchFormButton>
+export default function Searchbar({ onSubmit }) {
+    return (
+        <Header>
+            <SearchForm onSubmit={onSubmit}>
+                <SearchFormButton type="submit">
+                    <IconContext.Provider
+                        value={{ color: '#3f51b5', size: '30px' }}
+                    >
+                        <ImSearch />
+                    </IconContext.Provider>
+                </SearchFormButton>
 
-                    <SearchFormInput
-                        type="text"
-                        autocomplete="off"
-                        autofocus
-                        placeholder="Search images and photos"
-                    />
-                </SearchForm>
-            </SearchbarWrapper>
-        );
-    }
+                <SearchFormInput
+                    type="text"
+                    name="search"
+                    autocomplete="off"
+                    autoFocus
+                    placeholder="Search images and photos"
+                />
+            </SearchForm>
+        </Header>
+    );
 }
 
-{
-    /* <header className="searchbar">
-  <form class="form">
-    <button type="submit" class="button">
-      <span class="button-label">Search</span>
-    </button>
-
-    <input
-      class="input"
-      type="text"
-      autocomplete="off"
-      autofocus
-      placeholder="Search images and photos"
-    />
-  </form>
-</header> */
-}
+Searchbar.propTypes = {
+    onSubmit: PropTypes.func.isRequired,
+};

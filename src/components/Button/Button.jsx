@@ -1,10 +1,15 @@
-import React from "react";
-import { IconSearchFormButton } from "./Button.styled";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { ButtonLoadMore } from './Button.styled';
 
-const IconButton = ({ children, onClick, ...allProps}) => {
-    <IconSearchFormButton type="button" onClick={onClick} {...allProps}>
-        {children}
-    </IconSearchFormButton>
+export default function Button({ loadMore }) {
+    return (
+        <ButtonLoadMore type="button" onClick={loadMore}>
+            Load more
+        </ButtonLoadMore>
+    );
 }
 
-export default IconButton;
+Button.propTypes = {
+    loadMore: PropTypes.func.isRequired,
+};
